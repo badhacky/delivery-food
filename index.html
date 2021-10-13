@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeliveryFood - Доставка еды на дом</title>
+    <!-- Favicon -->
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+    <!-- Стили нормализации -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Стили swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Нестандартные шрифты -->
+    <link rel="stylesheet" href="css/fonts.css" />
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Общий контейнер -->
+    <div class="container">
+      <!-- Шапка сайта -->
+      <header class="header">
+        <!-- Логотип -->
+        <a class="header__logo" href="index.html"><img src="img/logo.png" alt="Логотип" /></a>
+        <!-- Адрес доставки -->
+        <input class="header__input-address" type="text" placeholder="Адрес доставки" />
+        <!-- Кнопки -->
+        <div class="buttons">
+          <span class="user-name"></span>
+          <!-- Кнопка "Корзина" -->
+          <button class="button button-cart">
+            <img class="button__icon" src="img/shopping-cart.svg" alt="Корзина" />
+            <span class="button__text">Корзина</span>
+          </button>
+          <!-- /.button -->
+          <!-- Кнопка "Войти" -->
+          <button class="button button-primary button-auth">
+            <img class="button__icon" src="img/user.svg" alt="Пользователь" />
+            <span class="button__text">Войти</span>
+          </button>
+          <button class="button button-primary button-out">
+            <!-- <img class="button__icon" src="img/logout.svg" alt="Выйти" /> -->
+            <span class="button__text">Выйти</span>
+          </button>
+          <!-- /.button button-primary -->
+        </div>
+        <!-- /.buttons -->
+      </header>
+      <!-- /.header -->
+    </div>
+    <!-- /.container -->
+
+    <!-- Блок с промо и карточками ресторанов -->
+    <main class="main">
+      <!-- Общий контейнер -->
+      <div class="container">
+        <div class="promo-container swiper">
+          <div class="swiper-wrapper">
+            <!-- Промоакция -->
+            <section class="promo promo_pizza swiper-slide">
+              <!-- Заголовок промоакции -->
+              <h2 class="promo__title">
+                Онлайн-сервис <br />
+                доставки еды на дом
+              </h2>
+              <!-- /.promo__title -->
+              <!-- Подзаголовок промоакции -->
+              <div class="promo__subtitle">
+                Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+              </div>
+              <!-- /.promo__subtitle -->
+            </section>
+            <!-- /.promo -->
+            <!-- Промоакция -->
+            <section class="promo promo_kebab swiper-slide">
+              <!-- Заголовок промоакции -->
+              <h2 class="promo__title">
+                Шашлыки на майские <br />
+                со скидкой 35%
+              </h2>
+              <!-- /.promo__title -->
+              <!-- Подзаголовок промоакции -->
+              <div class="promo__subtitle">
+                Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+              </div>
+              <!-- /.promo__subtitle -->
+            </section>
+            <!-- /.promo -->
+            <!-- Промоакция -->
+            <section class="promo promo_vegetables swiper-slide">
+              <!-- Заголовок промоакции -->
+              <h2 class="promo__title">
+                Скидка 20% на всю еду <br />
+                по промокоду LOVE.JS
+              </h2>
+              <!-- /.promo__title -->
+              <!-- Подзаголовок промоакции -->
+              <div class="promo__subtitle">
+                Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+              </div>
+              <!-- /.promo__subtitle -->
+            </section>
+            <!-- /.promo -->
+            <!-- Промоакция -->
+            <section class="promo promo_sushi swiper-slide">
+              <!-- Заголовок промоакции -->
+              <h2 class="promo__title">
+                Сеты со скидкой до 30% <br />
+                в ресторанах
+              </h2>
+              <!-- /.promo__title -->
+              <!-- Подзаголовок промоакции -->
+              <div class="promo__subtitle">Скидки на сеты до 30 мая по промокоду DADADA</div>
+              <!-- /.promo__subtitle -->
+            </section>
+            <!-- /.promo -->
+          </div>
+          <!-- /.swiper-wrapper -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- /.promo-container swiper-container -->
+
+        <!-- Рестораны -->
+        <section class="restaurants">
+          <!-- Верхняя часть блока ресторанов -->
+          <div class="restaurants__heading">
+            <!-- Заголовок блока ресторанов -->
+            <h2 class="restaurants__title">Рестораны</h2>
+            <!-- /.restaurants__title -->
+            <!-- Элемент ввода для поиска блюд и ресторанов -->
+            <input class="restaurants__input-search" type="text" placeholder="Поиск блюд и ресторанов" />
+          </div>
+          <!-- /.restaurants__heading -->
+
+          <!-- Карточки ресторанов -->
+          <div class="restaurants__cards"></div>
+          <!-- /.restaurants__cards -->
+        </section>
+        <!-- /.restaurants -->
+
+        <!-- Продукты -->
+        <section class="products hide">
+          <!-- Верхняя часть блока продуктов -->
+          <div class="restaurant__heading">
+            <!-- Заголовок ресторана -->
+            <h2 class="restaurant__title">ТаНуки</h2>
+            <!-- /.restaurant__title -->
+            <!-- Информация о ресторане -->
+            <div class="restaurant__card-info restaurant__card-info_margins">
+              <!-- Рейтинг ресторана -->
+              <div class="restaurant__card-rating restaurant__card-rating_basis_auto">
+                <img class="restaurant__icon" src="img/rating.svg" alt="Рейтинг" />
+                4.7
+              </div>
+              <!-- /.restaurant__card-rating restaurant__card-rating_basis_auto -->
+              <!-- Начальная цена в ресторане -->
+              <div class="restaurant__card-price restaurant__card-price_size_big">От 1 200 ₽</div>
+              <!-- /.restaurant__card-price restaurant__card-price_size_big -->
+              <!-- Категория ресторана -->
+              <div class="restaurant__card-category restaurant__card-category_size_big restaurant__card-category_long">
+                Суши, роллы, русская, кавказская, узбекская, туркменская, азербайджанская, иранская, армянская кухни
+              </div>
+              <!-- /.restaurant__card-category restaurant__card-category_size_big -->
+            </div>
+            <!-- /.product__card-info -->
+          </div>
+          <!-- /.restaurant__heading -->
+
+          <!-- Карточки продуктов -->
+          <div class="products__cards"></div>
+          <!-- /.product__cards -->
+        </section>
+        <!-- /.products -->
+      </div>
+      <!-- /.container -->
+    </main>
+    <!-- /.main -->
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <!-- Контейнер -->
+      <div class="container">
+        <!-- Основной блок подвала сайта -->
+        <div class="footer__block">
+          <!-- Логотип -->
+          <img class="footer__logo" src="img/logo.svg" alt="Логотип" />
+          <!-- Навигационные ссылки -->
+          <nav class="footer__nav">
+            <a href="#" class="footer__link">Ресторанам</a>
+            <a href="#" class="footer__link">Курьерам</a>
+            <a href="#" class="footer__link">Пресс-центр</a>
+            <a href="#" class="footer__link">Контакты</a>
+          </nav>
+          <!-- /.footer__nav -->
+          <!-- Ссылки социальные сети -->
+          <div class="footer__social-links">
+            <a href="#" class="footer__social-link"><img src="img/instagram.svg" alt="Instagram" /></a>
+            <a href="#" class="footer__social-link"><img src="img/fb.svg" alt="Facebook" /></a>
+            <a href="#" class="footer__social-link"><img src="img/vk.svg" alt="ВКонтакте" /></a>
+          </div>
+          <!-- /.footer__social-links -->
+        </div>
+        <!-- /.footer__block -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- /.footer -->
+
+    <!-- Подложка модального окна -->
+    <div class="modal modal-cart">
+      <!-- Модальное окно -->
+      <div class="modal-dialog modal-dialog-cart">
+        <!-- Верхняя часть окна -->
+        <div class="modal__header">
+          <!-- Загололвок окна -->
+          <h3 class="modal__title">Корзина</h3>
+          <!-- /.modal__title -->
+          <!-- Кнопка закрытия окна -->
+          <button class="modal__close modal-cart__close">&times;</button>
+          <!-- /.modal__close -->
+        </div>
+        <!-- /.modal__header -->
+        <!-- Тело окна -->
+        <div class="modal__body modal-cart__body">
+          <div class="cart-is-clear hide">Ваша корзина пока пуста</div>
+          <!-- Строки продуктов -->
+          <div class="products__rows"></div>
+          <!-- /.products__rows -->
+        </div>
+        <!-- /.modal__body -->
+
+        <!-- Нижняя часть окна -->
+        <div class="modal__footer modal-cart__footer">
+          <!-- Сумма заказа -->
+          <span class="modal-footer__price-tag modal-cart-footer__price-tag">1250 ₽</span>
+          <!-- Кнопки нижней части окна -->
+          <div class="modal-footer__buttons">
+            <!-- Кнопка "Оформить заказ" -->
+            <button class="button button-primary">Оформить заказ</button>
+            <!-- Кнопка "Отмена" -->
+            <button class="button button-clear-cart">Очистить корзину</button>
+          </div>
+          <!-- /.modal-footer__buttons -->
+        </div>
+        <!-- /.modal__footer -->
+      </div>
+      <!-- /.modal__dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal modal-auth">
+      <div class="modal-dialog modal-dialog-auth">
+        <div class="modal__header">
+          <div class="modal__title">Авторизация</div>
+          <button class="modal__close modal-auth__close">&times;</button>
+          <!-- /.modal__close -->
+        </div>
+        <!-- /.modal__header -->
+        <div class="modal-auth__body">
+          <form id="logInForm">
+            <fieldset class="form__body">
+              <label class="label-auth">
+                <span>Логин</span>
+                <input id="login" type="text" />
+              </label>
+              <label class="label-auth">
+                <span>Пароль</span>
+                <input id="password" type="password" />
+              </label>
+              <!-- /.label-auth -->
+            </fieldset>
+            <!-- Нижняя часть окна -->
+            <div class="modal__footer modal__footer-auth">
+              <!-- Кнопки нижней части окна -->
+              <div class="modal-footer__buttons">
+                <!-- Кнопка "Оформить заказ" -->
+                <button class="button button-primary button-auth" type="submit">Войти</button>
+                <!-- Кнопка "Отмена" -->
+                <button class="button button-cancel-auth" type="button">Отмена</button>
+              </div>
+              <!-- /.modal-footer__buttons -->
+            </div>
+            <!-- /.modal__footer -->
+          </form>
+          <!-- /.logInForm -->
+        </div>
+        <!-- /.modal__body -->
+      </div>
+      <!-- /.modal-dialog modal-dialog-auth -->
+    </div>
+    <!-- /.modal modal-auth -->
+
+    <!-- Скрипт WOW.js -->
+    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Основной скрипт -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
